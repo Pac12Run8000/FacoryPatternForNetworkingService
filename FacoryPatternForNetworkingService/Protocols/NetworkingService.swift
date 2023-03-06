@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias NetworkingResult<T> = Result<T, Error>
+
 protocol NetworkingService {
-    func fetchAcronyms(for searchTerm: String, completion: @escaping (Result<AcronymObject, Error>) -> Void)
+    func fetchAcronyms(for searchTerm: String, completion: @escaping (NetworkingResult<AcronymObject>) -> Void)
 }
