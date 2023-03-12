@@ -36,6 +36,7 @@ class AcronymNetworkingService: NetworkingService {
             do {
                 let acronyms = try JSONDecoder().decode(AcronymObject.self, from: data)
                 completion(.success(acronyms))
+                print(acronyms)
             } catch {
                 completion(.failure(error))
             }
@@ -49,4 +50,17 @@ class AcronymNetworkingService: NetworkingService {
         components.queryItems = [URLQueryItem(name: "sf", value: searchTerm)]
         return components.url
     }
+}
+
+
+class MockAcronymNetworkingService:NetworkingService {
+    
+    
+    func fetchAcronyms(for searchTerm: String, completion: @escaping (NetworkingResult<AcronymObject>) -> Void) {
+        let acronymObject = [FacoryPatternForNetworkingService.AcronymElement(sf: "XM", lfs: [FacoryPatternForNetworkingService.LF(lf: "X chromosome", freq: 7, since: 1979, vars: Optional([FacoryPatternForNetworkingService.LF(lf: "X chromosome", freq: 6, since: 1979, vars: nil), FacoryPatternForNetworkingService.LF(lf: "X-chromosome", freq: 1, since: 2005, vars: nil)])), FacoryPatternForNetworkingService.LF(lf: "maternal X", freq: 3, since: 1988, vars: Optional([FacoryPatternForNetworkingService.LF(lf: "maternal X", freq: 3, since: 1988, vars: nil)])), FacoryPatternForNetworkingService.LF(lf: "The maximum adsorption values", freq: 3, since: 2004, vars: Optional([FacoryPatternForNetworkingService.LF(lf: "The maximum adsorption values", freq: 3, since: 2004, vars: nil)])), FacoryPatternForNetworkingService.LF(lf: "We compared our standard NIH (extended incubation) crossmatch", freq: 2, since: 1990, vars: Optional([FacoryPatternForNetworkingService.LF(lf: "We compared our standard NIH (extended incubation) crossmatch", freq: 2, since: 1990, vars: nil)]))])]
+        
+        completion(.success(acronymObject))
+    }
+    
+    
 }

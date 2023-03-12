@@ -12,4 +12,8 @@ class NetworkingServiceFactory {
         let session = URLSession.shared
         return AcronymNetworkingService(session: session)
     }
+    
+    static func makeMockNetworkingService() -> NetworkingService {
+        return MockAcronymNetworkingService()
+    }
 }

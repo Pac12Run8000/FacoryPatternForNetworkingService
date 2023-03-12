@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var searchTerm: String = ""
         @State private var acronyms: AcronymObject = []
-        let networkingService = NetworkingServiceFactory.makeNetworkingService()
+        let networkingService = NetworkingServiceFactory.makeMockNetworkingService()
         
     var body: some View {
         VStack {
@@ -23,48 +23,48 @@ struct ContentView: View {
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
                         
-            HStack {
-                Button {
-                    fetchAcronyms(for: "al")
-                } label: {
-                    Text("al")
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(8)
-                }
+                    HStack {
+                        Button {
+                            fetchAcronyms(for: "al")
+                        } label: {
+                            Text("al")
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(Color.blue)
+                                .cornerRadius(8)
+                        }
 
-                Button {
-                    fetchAcronyms(for: "az")
-                } label: {
-                    Text("az")
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(8)
-                }
-                
-                Button {
-                    fetchAcronyms(for: "io")
-                } label: {
-                    Text("io")
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(8)
-                }
-                
-                Button {
-                    fetchAcronyms(for: "il")
-                } label: {
-                    Text("il")
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(8)
-                }
-                
-            }
+                        Button {
+                            fetchAcronyms(for: "az")
+                        } label: {
+                            Text("az")
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(Color.blue)
+                                .cornerRadius(8)
+                        }
+                        
+                        Button {
+                            fetchAcronyms(for: "io")
+                        } label: {
+                            Text("io")
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(Color.blue)
+                                .cornerRadius(8)
+                        }
+                        
+                        Button {
+                            fetchAcronyms(for: "il")
+                        } label: {
+                            Text("il")
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(Color.blue)
+                                .cornerRadius(8)
+                        }
+                        
+                    }
             
                     Spacer()
                         .frame(height:20)
@@ -79,9 +79,6 @@ struct ContentView: View {
                         .listStyle(PlainListStyle())
                     }
                     Spacer()
-                        
-                    
-                    
                 }
         Spacer()
     }
