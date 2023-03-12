@@ -22,6 +22,53 @@ struct ContentView: View {
                     .cornerRadius(8)
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
+                        
+            HStack {
+                Button {
+                    fetchAcronyms(for: "al")
+                } label: {
+                    Text("al")
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(8)
+                }
+
+                Button {
+                    fetchAcronyms(for: "az")
+                } label: {
+                    Text("az")
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(8)
+                }
+                
+                Button {
+                    fetchAcronyms(for: "io")
+                } label: {
+                    Text("io")
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(8)
+                }
+                
+                Button {
+                    fetchAcronyms(for: "il")
+                } label: {
+                    Text("il")
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(8)
+                }
+                
+            }
+            
+                    Spacer()
+                        .frame(height:20)
+            
                     
                     if !acronyms.isEmpty {
                         List(acronyms, id: \.sf) { acronym in
@@ -32,6 +79,8 @@ struct ContentView: View {
                         .listStyle(PlainListStyle())
                     }
                     Spacer()
+                        
+                    
                     
                 }
         Spacer()
@@ -48,7 +97,20 @@ struct ContentView: View {
                     }
                 }
             }
+    }
+    
+    private func fetchAcronyms(for searchVal:String) {
+        networkingService.fetchAcronyms(for: searchVal) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let acronyms):
+                    self.acronyms = acronyms
+                case .failure(let error):
+                    print(error)
+                }
+            }
         }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
