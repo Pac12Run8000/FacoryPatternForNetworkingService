@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var searchTerm: String = ""
         @State private var acronyms: AcronymObject = []
-        let networkingService = NetworkingServiceFactory.makeMockNetworkingService()
+        let networkingService = NetworkingServiceFactory.makeNetworkingService()
         
     var body: some View {
         VStack {

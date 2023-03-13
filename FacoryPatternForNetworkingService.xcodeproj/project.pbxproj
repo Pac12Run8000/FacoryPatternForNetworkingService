@@ -15,7 +15,18 @@
 		09311FBD29B4EBCF00343147 /* AcronymNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09311FBC29B4EBCF00343147 /* AcronymNetworkingService.swift */; };
 		09311FC029B4EC2600343147 /* AcronymObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09311FBF29B4EC2600343147 /* AcronymObject.swift */; };
 		09311FC229B4EFB800343147 /* NetworkingServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09311FC129B4EFB800343147 /* NetworkingServiceFactory.swift */; };
+		09311FCD29BECF0B00343147 /* FacoryPatternForNetworkingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09311FCC29BECF0B00343147 /* FacoryPatternForNetworkingServiceTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		09311FCE29BECF0B00343147 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 09311F9C29B4E75900343147 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 09311FA329B4E75900343147;
+			remoteInfo = FacoryPatternForNetworkingService;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		09311FA429B4E75900343147 /* FacoryPatternForNetworkingService.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacoryPatternForNetworkingService.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,10 +39,19 @@
 		09311FBC29B4EBCF00343147 /* AcronymNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymNetworkingService.swift; sourceTree = "<group>"; };
 		09311FBF29B4EC2600343147 /* AcronymObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymObject.swift; sourceTree = "<group>"; };
 		09311FC129B4EFB800343147 /* NetworkingServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingServiceFactory.swift; sourceTree = "<group>"; };
+		09311FCA29BECF0B00343147 /* FacoryPatternForNetworkingServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FacoryPatternForNetworkingServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		09311FCC29BECF0B00343147 /* FacoryPatternForNetworkingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacoryPatternForNetworkingServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		09311FA129B4E75900343147 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		09311FC729BECF0B00343147 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -45,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				09311FA629B4E75900343147 /* FacoryPatternForNetworkingService */,
+				09311FCB29BECF0B00343147 /* FacoryPatternForNetworkingServiceTests */,
 				09311FA529B4E75900343147 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				09311FA429B4E75900343147 /* FacoryPatternForNetworkingService.app */,
+				09311FCA29BECF0B00343147 /* FacoryPatternForNetworkingServiceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,6 +143,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		09311FCB29BECF0B00343147 /* FacoryPatternForNetworkingServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				09311FCC29BECF0B00343147 /* FacoryPatternForNetworkingServiceTests.swift */,
+			);
+			path = FacoryPatternForNetworkingServiceTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,6 +171,24 @@
 			productReference = 09311FA429B4E75900343147 /* FacoryPatternForNetworkingService.app */;
 			productType = "com.apple.product-type.application";
 		};
+		09311FC929BECF0B00343147 /* FacoryPatternForNetworkingServiceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 09311FD229BECF0B00343147 /* Build configuration list for PBXNativeTarget "FacoryPatternForNetworkingServiceTests" */;
+			buildPhases = (
+				09311FC629BECF0B00343147 /* Sources */,
+				09311FC729BECF0B00343147 /* Frameworks */,
+				09311FC829BECF0B00343147 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				09311FCF29BECF0B00343147 /* PBXTargetDependency */,
+			);
+			name = FacoryPatternForNetworkingServiceTests;
+			productName = FacoryPatternForNetworkingServiceTests;
+			productReference = 09311FCA29BECF0B00343147 /* FacoryPatternForNetworkingServiceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -153,6 +201,10 @@
 				TargetAttributes = {
 					09311FA329B4E75900343147 = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					09311FC929BECF0B00343147 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 09311FA329B4E75900343147;
 					};
 				};
 			};
@@ -170,6 +222,7 @@
 			projectRoot = "";
 			targets = (
 				09311FA329B4E75900343147 /* FacoryPatternForNetworkingService */,
+				09311FC929BECF0B00343147 /* FacoryPatternForNetworkingServiceTests */,
 			);
 		};
 /* End PBXProject section */
@@ -181,6 +234,13 @@
 			files = (
 				09311FAF29B4E75B00343147 /* Preview Assets.xcassets in Resources */,
 				09311FAC29B4E75B00343147 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		09311FC829BECF0B00343147 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +260,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		09311FC629BECF0B00343147 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09311FCD29BECF0B00343147 /* FacoryPatternForNetworkingServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		09311FCF29BECF0B00343147 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 09311FA329B4E75900343147 /* FacoryPatternForNetworkingService */;
+			targetProxy = 09311FCE29BECF0B00343147 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		09311FB029B4E75B00343147 /* Debug */ = {
@@ -377,6 +453,42 @@
 			};
 			name = Release;
 		};
+		09311FD029BECF0B00343147 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 93TAG27MAJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GroverTech.FacoryPatternForNetworkingServiceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FacoryPatternForNetworkingService.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FacoryPatternForNetworkingService";
+			};
+			name = Debug;
+		};
+		09311FD129BECF0B00343147 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 93TAG27MAJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GroverTech.FacoryPatternForNetworkingServiceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FacoryPatternForNetworkingService.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FacoryPatternForNetworkingService";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -394,6 +506,15 @@
 			buildConfigurations = (
 				09311FB329B4E75B00343147 /* Debug */,
 				09311FB429B4E75B00343147 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		09311FD229BECF0B00343147 /* Build configuration list for PBXNativeTarget "FacoryPatternForNetworkingServiceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09311FD029BECF0B00343147 /* Debug */,
+				09311FD129BECF0B00343147 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
