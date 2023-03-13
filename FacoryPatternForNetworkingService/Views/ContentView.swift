@@ -63,13 +63,10 @@ struct ContentView: View {
                                 .background(Color.blue)
                                 .cornerRadius(8)
                         }
-                        
                     }
             
                     Spacer()
                         .frame(height:20)
-            
-                    
                     if !acronyms.isEmpty {
                         List(acronyms, id: \.sf) { acronym in
                             ForEach(acronym.lfs, id: \.lf) { lf in

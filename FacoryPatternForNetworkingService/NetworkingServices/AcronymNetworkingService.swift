@@ -36,7 +36,7 @@ class AcronymNetworkingService: NetworkingService {
             do {
                 let acronyms = try JSONDecoder().decode(AcronymObject.self, from: data)
                 completion(.success(acronyms))
-                print(acronyms)
+//                print(acronyms)
             } catch {
                 completion(.failure(error))
             }

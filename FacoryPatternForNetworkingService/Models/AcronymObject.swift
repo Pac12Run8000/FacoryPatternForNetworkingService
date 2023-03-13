@@ -7,9 +7,6 @@
 
 import Foundation
 
-
-import Foundation
-
 struct AcronymElement:Codable {
     var sf:String
     var lfs:[LF]

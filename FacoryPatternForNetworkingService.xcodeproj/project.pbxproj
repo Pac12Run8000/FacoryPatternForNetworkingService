@@ -16,6 +16,7 @@
 		09311FC029B4EC2600343147 /* AcronymObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09311FBF29B4EC2600343147 /* AcronymObject.swift */; };
 		09311FC229B4EFB800343147 /* NetworkingServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09311FC129B4EFB800343147 /* NetworkingServiceFactory.swift */; };
 		09311FCD29BECF0B00343147 /* FacoryPatternForNetworkingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09311FCC29BECF0B00343147 /* FacoryPatternForNetworkingServiceTests.swift */; };
+		09311FD429BED83B00343147 /* ContentViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09311FD329BED83B00343147 /* ContentViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		09311FC129B4EFB800343147 /* NetworkingServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingServiceFactory.swift; sourceTree = "<group>"; };
 		09311FCA29BECF0B00343147 /* FacoryPatternForNetworkingServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FacoryPatternForNetworkingServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09311FCC29BECF0B00343147 /* FacoryPatternForNetworkingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacoryPatternForNetworkingServiceTests.swift; sourceTree = "<group>"; };
+		09311FD329BED83B00343147 /* ContentViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				09311FCC29BECF0B00343147 /* FacoryPatternForNetworkingServiceTests.swift */,
+				09311FD329BED83B00343147 /* ContentViewModelTests.swift */,
 			);
 			path = FacoryPatternForNetworkingServiceTests;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09311FD429BED83B00343147 /* ContentViewModelTests.swift in Sources */,
 				09311FCD29BECF0B00343147 /* FacoryPatternForNetworkingServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
