@@ -17,6 +17,8 @@
 		09311FC229B4EFB800343147 /* NetworkingServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09311FC129B4EFB800343147 /* NetworkingServiceFactory.swift */; };
 		09311FCD29BECF0B00343147 /* FacoryPatternForNetworkingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09311FCC29BECF0B00343147 /* FacoryPatternForNetworkingServiceTests.swift */; };
 		09311FD429BED83B00343147 /* ContentViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09311FD329BED83B00343147 /* ContentViewModelTests.swift */; };
+		09311FD729C2C29C00343147 /* StubData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09311FD629C2C29B00343147 /* StubData.swift */; };
+		09311FD929C33E1100343147 /* ContentStubbingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09311FD829C33E1100343147 /* ContentStubbingTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		09311FCA29BECF0B00343147 /* FacoryPatternForNetworkingServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FacoryPatternForNetworkingServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09311FCC29BECF0B00343147 /* FacoryPatternForNetworkingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacoryPatternForNetworkingServiceTests.swift; sourceTree = "<group>"; };
 		09311FD329BED83B00343147 /* ContentViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModelTests.swift; sourceTree = "<group>"; };
+		09311FD629C2C29B00343147 /* StubData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubData.swift; sourceTree = "<group>"; };
+		09311FD829C33E1100343147 /* ContentStubbingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentStubbingTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 		09311FA629B4E75900343147 /* FacoryPatternForNetworkingService */ = {
 			isa = PBXGroup;
 			children = (
+				09311FD529C2C1D800343147 /* Utilities */,
 				09311FBE29B4EBE900343147 /* Models */,
 				09311FB929B4E8C300343147 /* Info.plist */,
 				09311FB829B4E7AB00343147 /* Views */,
@@ -150,8 +155,17 @@
 			children = (
 				09311FCC29BECF0B00343147 /* FacoryPatternForNetworkingServiceTests.swift */,
 				09311FD329BED83B00343147 /* ContentViewModelTests.swift */,
+				09311FD829C33E1100343147 /* ContentStubbingTests.swift */,
 			);
 			path = FacoryPatternForNetworkingServiceTests;
+			sourceTree = "<group>";
+		};
+		09311FD529C2C1D800343147 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				09311FD629C2C29B00343147 /* StubData.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +271,7 @@
 				09311FC229B4EFB800343147 /* NetworkingServiceFactory.swift in Sources */,
 				09311FBB29B4EB0A00343147 /* NetworkingService.swift in Sources */,
 				09311FAA29B4E75900343147 /* ContentView.swift in Sources */,
+				09311FD729C2C29C00343147 /* StubData.swift in Sources */,
 				09311FBD29B4EBCF00343147 /* AcronymNetworkingService.swift in Sources */,
 				09311FA829B4E75900343147 /* FacoryPatternForNetworkingServiceApp.swift in Sources */,
 				09311FC029B4EC2600343147 /* AcronymObject.swift in Sources */,
@@ -267,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09311FD929C33E1100343147 /* ContentStubbingTests.swift in Sources */,
 				09311FD429BED83B00343147 /* ContentViewModelTests.swift in Sources */,
 				09311FCD29BECF0B00343147 /* FacoryPatternForNetworkingServiceTests.swift in Sources */,
 			);

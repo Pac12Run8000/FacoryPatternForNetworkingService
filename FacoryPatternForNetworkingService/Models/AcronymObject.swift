@@ -7,12 +7,18 @@
 
 import Foundation
 
-struct AcronymElement:Codable {
+struct AcronymElement:Codable, Equatable {
+    
+    
     var sf:String
     var lfs:[LF]
+    
+    static func == (lhs: AcronymElement, rhs: AcronymElement) -> Bool {
+        return lhs.lfs == rhs.lfs
+    }
 }
 
-struct LF:Codable {
+struct LF:Codable, Equatable {
      let lf: String
      let freq: Int
      let since: Int
