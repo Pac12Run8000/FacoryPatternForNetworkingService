@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var list:[String] = []
     @State private var searchTerm: String = ""
         @State private var acronyms: AcronymObject = []
         let networkingService = NetworkingServiceFactory.makeNetworkingService()
@@ -67,17 +68,36 @@ struct ContentView: View {
             
                     Spacer()
                         .frame(height:20)
-                    if !acronyms.isEmpty {
-                        List(acronyms, id: \.sf) { acronym in
-                            ForEach(acronym.lfs, id: \.lf) { lf in
-                                Text(lf.lf)
-                            }
-                        }
-                        .listStyle(PlainListStyle())
-                    }
+            if !list.isEmpty {
+                List(list, id: \.self) { item in
+                    Text(item)
+                }
+                .listStyle(PlainListStyle())
+            }
+            
+//                    if !acronyms.isEmpty {
+//                        List(acronyms, id: \.sf) { acronym in
+//                            ForEach(acronym.lfs, id: \.lf) { lf in
+//                                Text(lf.lf)
+//                            }
+//                        }
+//                        .listStyle(PlainListStyle())
+//                    }
                     Spacer()
                 }
         Spacer()
+    }
+    
+    public func displayList(acronymObject:AcronymObject) {
+        var localList = [String]()
+        if !acronyms.isEmpty {
+            for acronym in acronyms {
+                for item in acronym.lfs {
+                    localList.append(item.lf)
+                }
+            }
+            self.list = localList
+        }
     }
     
     private func fetchAcronyms() {
@@ -86,6 +106,7 @@ struct ContentView: View {
                     switch result {
                     case .success(let acronyms):
                         self.acronyms = acronyms
+                        displayList(acronymObject: acronyms)
                     case .failure(let error):
                         print(error)
                     }
@@ -99,6 +120,7 @@ struct ContentView: View {
                 switch result {
                 case .success(let acronyms):
                     self.acronyms = acronyms
+                    displayList(acronymObject: acronyms)
                 case .failure(let error):
                     print(error)
                 }
