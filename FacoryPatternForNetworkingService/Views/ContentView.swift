@@ -88,7 +88,7 @@ struct ContentView: View {
         Spacer()
     }
     
-    public func displayList(acronymObject:AcronymObject) {
+    public func displayList(acronymObject:AcronymObject, completion:@escaping(_ list:[String]) -> ()) {
         var localList = [String]()
         if !acronyms.isEmpty {
             for acronym in acronyms {
@@ -96,7 +96,10 @@ struct ContentView: View {
                     localList.append(item.lf)
                 }
             }
-            self.list = localList
+//            self.list = localList
+            completion(localList)
+        } else {
+            completion([String]())
         }
     }
     
@@ -106,7 +109,9 @@ struct ContentView: View {
                     switch result {
                     case .success(let acronyms):
                         self.acronyms = acronyms
-                        displayList(acronymObject: acronyms)
+                        displayList(acronymObject: acronyms) { list in
+                            self.list = list
+                        }
                     case .failure(let error):
                         print(error)
                     }
@@ -120,7 +125,9 @@ struct ContentView: View {
                 switch result {
                 case .success(let acronyms):
                     self.acronyms = acronyms
-                    displayList(acronymObject: acronyms)
+                    displayList(acronymObject: acronyms) { list in
+                        self.list = list
+                    }
                 case .failure(let error):
                     print(error)
                 }
