@@ -15,6 +15,7 @@ final class ContentStubbingTests: XCTestCase {
     var jsonData: Data!
     var expectedModel: AcronymObject!
     var decoder: JSONDecoder!
+    var contentView:ContentView!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
@@ -22,13 +23,14 @@ final class ContentStubbingTests: XCTestCase {
         jsonData = Data(StubData.jsonEncoded)
         expectedModel = AcronymObject()
         decoder = JSONDecoder()
+        contentView = ContentView()
     }
 
     override func tearDownWithError() throws {
         jsonData = nil
         expectedModel = nil
         decoder = nil
-        
+        contentView = nil
         try super.tearDownWithError()
     }
 
@@ -46,7 +48,15 @@ final class ContentStubbingTests: XCTestCase {
                 lfs.append(lf.lf)
             }
         }
-        print("count:\(lfs.count)")
+        XCTAssertEqual(lfs.count, 64)
+    }
+    
+    func testModelOperatesCorrectly() throws {
+        let acronymObject = try decoder.decode(AcronymObject.self, from: jsonData)
+        contentView.displayList(acronymObject: acronymObject) { list in
+            XCTAssertEqual(list.count, 64)
+        }
+        
     }
 
 }

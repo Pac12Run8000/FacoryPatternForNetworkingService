@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State var list:[String] = []
     @State private var searchTerm: String = ""
-        @State private var acronyms: AcronymObject = []
+        
         let networkingService = NetworkingServiceFactory.makeNetworkingService()
         
     var body: some View {
@@ -90,13 +90,12 @@ struct ContentView: View {
     
     public func displayList(acronymObject:AcronymObject, completion:@escaping(_ list:[String]) -> ()) {
         var localList = [String]()
-        if !acronyms.isEmpty {
-            for acronym in acronyms {
+        if !acronymObject.isEmpty {
+            for acronym in acronymObject {
                 for item in acronym.lfs {
                     localList.append(item.lf)
                 }
             }
-//            self.list = localList
             completion(localList)
         } else {
             completion([String]())
@@ -108,7 +107,6 @@ struct ContentView: View {
                 DispatchQueue.main.async {
                     switch result {
                     case .success(let acronyms):
-                        self.acronyms = acronyms
                         displayList(acronymObject: acronyms) { list in
                             self.list = list
                         }
@@ -124,7 +122,6 @@ struct ContentView: View {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let acronyms):
-                    self.acronyms = acronyms
                     displayList(acronymObject: acronyms) { list in
                         self.list = list
                     }
