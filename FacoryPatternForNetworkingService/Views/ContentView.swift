@@ -88,7 +88,7 @@ struct ContentView: View {
         Spacer()
     }
     
-    public func displayList(acronymObject:AcronymObject, completion:@escaping(_ list:[String]) -> ()) {
+    internal func displayList(acronymObject:AcronymObject, completion:@escaping(_ list:[String]) -> ()) {
         var localList = [String]()
         if !acronymObject.isEmpty {
             for acronym in acronymObject {

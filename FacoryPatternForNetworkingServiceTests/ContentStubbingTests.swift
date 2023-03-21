@@ -52,6 +52,8 @@ final class ContentStubbingTests: XCTestCase {
     }
     
     func testModelOperatesCorrectly() throws {
+        
+        
         let acronymObject = try decoder.decode(AcronymObject.self, from: jsonData)
         contentView.displayList(acronymObject: acronymObject) { list in
             XCTAssertEqual(list.count, 64)
